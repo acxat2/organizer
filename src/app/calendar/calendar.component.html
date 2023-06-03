@@ -23,7 +23,7 @@
           [class.active]="day.active"
           [class.selected]="day.selected"
         >
-          {{ day.value | moment: 'ddd DD' }}
+          {{ day.value | moment: 'DD' }}
         </span>
         <ng-container *ngIf="test(day, day.value | moment: 'DD-MM-YYYY')">
           <div class="availability"></div>

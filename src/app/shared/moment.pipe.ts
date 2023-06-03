@@ -10,5 +10,4 @@ export class MomentPipe implements PipeTransform {
   transform(m: moment.Moment | null, format: string = 'MMMM yyyy'): string {
     return m ? m.format(format) : '';
   }
-
 }

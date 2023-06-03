@@ -1,6 +1,6 @@
 section {
-  border: 1px solid black;
   padding: 1rem;
+  border: 1px solid #ccc;
 }
 
 header {
@@ -11,9 +11,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 1rem;
-  border: 1px solid #ccc;
   margin-bottom: 0.5rem;
+  padding: .5rem 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .task__title {
@@ -24,11 +24,61 @@ header {
 }
 
 .task__text {
-  width: 70%;
+  width: calc(100% - 240px);
 }
 
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 0.5rem;
+  }
+
+  .task {
+    padding: .5rem;
+  }
+
+  .task__text {
+    width: calc(100% - 115px);
+  }
+
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    margin-top: 0;
+    margin-top: 5px;
+  }
+
+  .task__text {
+    width: calc(100% - 115px);
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .task {
+    flex-direction: column;
+  }
+
+
+  .task__text {
+    width: calc(100%);
+  }
+
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
