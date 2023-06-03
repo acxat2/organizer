@@ -1,0 +1,50 @@
+<section>
+  <header>
+    <div class="header__container">
+      <span class="date">
+        Органийзер: <strong>{{ dateService.date | async | moment: 'DD.MM.YYYY' }}</strong>
+
+      </span>
+      <!-- <button class="btn btn-gray" (click)="dateService.date = dateService.toDay">Сегодня</button> -->
+    </div>
+    <hr>
+  </header>
+
+  <main>
+    <ul *ngIf="tasks.length; else noTasks">
+      <li class="task" *ngFor="let task of tasks; let i = index">
+        <span class="task__text">
+          <strong>{{ i + 1 }}.</strong>
+          <td
+            class="task__title"
+            contenteditable
+            #title
+          >{{task.title}}</td>
+        </span>
+        <div class="btn-container">
+          <button
+            class="btn btn-primary"
+            (click)="change(task, title.textContent)"
+          >Изменить</button>
+          <button class="btn btn-danger" (click)="remove(task)">Удалить</button>
+        </div>
+      </li>
+    </ul>
+    <ng-template #noTasks>
+      <p class="text-center">Пока ничего нет..</p>
+    </ng-template>
+  </main>
+  <footer>
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <input type="text"
+        formControlName="title"
+        placeholder="Введите новую задачу"
+      >
+      <button
+        type="submit"
+        class="btn btn-block btn-primary"
+        [disabled]="form.invalid"
+      >Добавить</button>
+    </form>
+  </footer>
+</section>

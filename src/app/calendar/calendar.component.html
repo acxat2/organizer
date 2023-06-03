@@ -1,0 +1,34 @@
+<table>
+  <thead>
+    <tr>
+      <th>Пн</th>
+      <th>Вт</th>
+      <th>Ср</th>
+      <th>Чт</th>
+      <th>Пт</th>
+      <th>Сб</th>
+      <th>Вс</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let week of calendar">
+      <td
+        style="position: relative;"
+        *ngFor="let day of week.days"
+        [class.disabled]="day.disabled"
+        (click)="select(day.value)"
+        [class.weekend]="weekend(day.value | moment: 'ddd')"
+        >
+        <span
+          [class.active]="day.active"
+          [class.selected]="day.selected"
+        >
+          {{ day.value | moment: 'ddd DD' }}
+        </span>
+        <ng-container *ngIf="test(day, day.value | moment: 'DD-MM-YYYY')">
+          <div class="availability"></div>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>

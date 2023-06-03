@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --danger-color: #dc3545;
+  --primary-color: #354edc;
+  --dark-color: #333;
+  --lite-color: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  color: var(--dark-color);
+  text-decoration: none;
+
+  &:hover {
+    color: #666;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  display: block;
+  margin-bottom: .5rem;
+  padding: .4rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.container {
+  margin: auto;
+  padding: 0 2rem;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+table th {
+  background-color: var(--lite-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: .4rem 1.3rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: var(--lite-color);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--lite-color);
+  outline: none;
+  cursor: pointer;
+  transition: opacity .2s;
+
+  &:disabled {
+    background-color: var(--dark-color);
+    color: #fff;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: .8;
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+}
+
+.btn-gray {
+  // border: solid 1px #dad9d9;
+  color: var(--dark-color);
+  background: none;
+}
+
+.text-center {
+  text-align: center;
+}
